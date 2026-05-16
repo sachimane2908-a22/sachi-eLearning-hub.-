@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Sachi eLearning Hub</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#f4f7ff;
+overflow-x:hidden;
+color:#222;
+}
+
+/* HEADER */
+
+header{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+padding:18px 7%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(255,255,255,0.92);
+backdrop-filter:blur(12px);
+z-index:1000;
+box-shadow:0 5px 20px rgba(0,0,0,0.05);
+}
+
+.logo{
+font-size:30px;
+font-weight:800;
+background:linear-gradient(45deg,#5b3df5,#8b5cff);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+/* NAVIGATION */
+
+nav{
+display:flex;
+gap:25px;
+}
+
+nav a{
+text-decoration:none;
+color:#333;
+font-weight:500;
+transition:0.3s;
+}
+
+nav a:hover{
+color:#5b3df5;
+}
+
+/* MOBILE MENU */
+
+.menu-toggle{
+display:none;
+font-size:32px;
+cursor:pointer;
+color:#5b3df5;
+}
+
+/* HERO */
+
+.hero{
+min-height:100vh;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:140px 7% 80px;
+gap:50px;
+flex-wrap:wrap;
+background:
+linear-gradient(rgba(255,255,255,0.75),rgba(255,255,255,0.75)),
+url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=1400&auto=format&fit=crop');
+
+background-size:cover;
+background-position:center;
+}
+
+.hero-text{
+flex:1;
+min-width:280px;
+animation:fadeLeft 1s ease;
+}
+
+.hero-text h1{
+font-size:70px;
+line-height:1.1;
+margin-bottom:25px;
+font-weight:800;
+}
+
+.hero-text h1 span{
+color:#5b3df5;
+}
+
+.hero-text p{
+font-size:18px;
+line-height:1.9;
+color:#555;
+margin-bottom:35px;
+max-width:650px;
+}
+
+.hero-buttons{
+display:flex;
+gap:18px;
+flex-wrap:wrap;
+}
+
+.btn{
+padding:15px 32px;
+border-radius:50px;
+text-decoration:none;
+font-weight:600;
+display:inline-block;
+transition:0.4s;
+}
+
+.primary-btn{
+background:linear-gradient(45deg,#5b3df5,#8b5cff);
+color:white;
+box-shadow:0 12px 30px rgba(91,61,245,0.35);
+}
+
+.primary-btn:hover{
+transform:translateY(-6px);
+}
+
+.secondary-btn{
+background:white;
+color:#5b3df5;
+border:2px solid #5b3df5;
+}
+
+.secondary-btn:hover{
+background:#5b3df5;
+color:white;
+}
+
+.hero-image{
+flex:1;
+min-width:280px;
+text-align:center;
+animation:fadeRight 1s ease;
+}
+
+.hero-image img{
+width:100%;
+max-width:550px;
+border-radius:35px;
+box-shadow:0 20px 50px rgba(0,0,0,0.18);
+}
+
+/* FLOAT BOX */
+
+.float-box{
+position:absolute;
+background:white;
+padding:15px 20px;
+border-radius:20px;
+box-shadow:0 10px 25px rgba(0,0,0,0.08);
+font-weight:600;
+}
+
+.box1{
+top:220px;
+right:90px;
+}
+
+.box2{
+bottom:100px;
+right:300px;
+}
+
+/* SECTION */
+
+section{
+padding:100px 7%;
+}
+
+.section-title{
+text-align:center;
+font-size:48px;
+margin-bottom:15px;
+font-weight:700;
+}
+
+.section-subtitle{
+text-align:center;
+color:#666;
+margin-bottom:60px;
+font-size:17px;
+}
+
+/* COURSES */
+
+.course-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:35px;
+}
+
+.course-card{
+background:white;
+border-radius:28px;
+overflow:hidden;
+box-shadow:0 10px 35px rgba(0,0,0,0.08);
+transition:0.4s;
+}
+
+.course-card:hover{
+transform:translateY(-12px);
+}
+
+.course-card img{
+width:100%;
+height:230px;
+object-fit:cover;
+}
+
+.course-content{
+padding:28px;
+}
+
+.tag{
+display:inline-block;
+padding:6px 14px;
+background:#eef2ff;
+color:#5b3df5;
+border-radius:30px;
+font-size:14px;
+font-weight:600;
+margin-bottom:15px;
+}
+
+.course-content h3{
+font-size:26px;
+margin-bottom:12px;
+}
+
+.course-content p{
+color:#666;
+line-height:1.8;
+margin-bottom:20px;
+}
+
+/* FEATURES */
+
+.features{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:28px;
+margin-top:50px;
+}
+
+.feature-box{
+background:white;
+padding:35px 30px;
+border-radius:28px;
+text-align:center;
+box-shadow:0 8px 25px rgba(0,0,0,0.07);
+transition:0.4s;
+}
+
+.feature-box:hover{
+transform:translateY(-10px);
+}
+
+.feature-icon{
+font-size:50px;
+margin-bottom:18px;
+}
+
+.feature-box h3{
+margin-bottom:15px;
+color:#5b3df5;
+}
+
+.feature-box p{
+line-height:1.8;
+color:#666;
+}
+
+/* CONTACT */
+
+.contact-box{
+background:
+linear-gradient(rgba(91,61,245,0.92),rgba(91,61,245,0.92)),
+url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop');
+
+background-size:cover;
+background-position:center;
+
+padding:80px 30px;
+border-radius:35px;
+text-align:center;
+color:white;
+}
+
+.contact-box h2{
+font-size:48px;
+margin-bottom:20px;
+}
+
+.contact-box p{
+line-height:1.9;
+margin-bottom:15px;
+font-size:18px;
+}
+
+/* FOOTER */
+
+footer{
+background:#111827;
+padding:30px;
+text-align:center;
+color:white;
+margin-top:80px;
+}
+
+/* ANIMATIONS */
+
+@keyframes fadeLeft{
+from{
+opacity:0;
+transform:translateX(-50px);
+}
+to{
+opacity:1;
+transform:translateX(0);
+}
+}
+
+@keyframes fadeRight{
+from{
+opacity:0;
+transform:translateX(50px);
+}
+to{
+opacity:1;
+transform:translateX(0);
+}
+}
+
+/* RESPONSIVE */
+
+@media(max-width:992px){
+
+.hero{
+text-align:center;
+padding-top:180px;
+}
+
+.hero-buttons{
+justify-content:center;
+}
+
+.hero-text h1{
+font-size:52px;
+}
+
+.float-box{
+display:none;
+}
+
+}
+
+@media(max-width:768px){
+
+header{
+padding:18px 5%;
+}
+
+.menu-toggle{
+display:block;
+}
+
+nav{
+position:absolute;
+top:80px;
+right:5%;
+background:white;
+width:220px;
+border-radius:20px;
+padding:20px;
+display:none;
+flex-direction:column;
+box-shadow:0 10px 25px rgba(0,0,0,0.1);
+}
+
+nav.active{
+display:flex;
+}
+
+.hero{
+padding:190px 5% 80px;
+}
+
+.hero-text h1{
+font-size:40px;
+}
+
+.section-title{
+font-size:34px;
+}
+
+.contact-box h2{
+font-size:34px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+
+<div class="logo">
+Sachi eLearning Hub
+</div>
+
+<div class="menu-toggle" id="menu-toggle">
+☰
+</div>
+
+<nav id="navbar">
+
+<a href="#home">Home</a>
+<a href="#courses">Courses</a>
+<a href="#features">Features</a>
+<a href="#contact">Contact</a>
+
+</nav>
+
+</header>
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+<div class="hero-text">
+
+<h1>
+Build Your Future With
+<span>Sachi eLearning Hub</span>
+</h1>
+
+<p>
+Master coding, networking, web development and communication skills with a beautiful modern online learning platform.
+</p>
+
+<div class="hero-buttons">
+
+<a href="#courses" class="btn primary-btn">
+Start Learning
+</a>
+
+<a href="#contact" class="btn secondary-btn">
+Contact Us
+</a>
+
+</div>
+
+</div>
+
+<div class="hero-image">
+
+<img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop">
+
+</div>
+
+<div class="float-box box1">
+⭐ 4.9 Student Rating
+</div>
+
+<div class="float-box box2">
+🎓 10,000+ Learners
+</div>
+
+</section>
+
+<!-- COURSES -->
+
+<section id="courses">
+
+<h2 class="section-title">
+Trending Courses
+</h2>
+
+<p class="section-subtitle">
+Professional learning programs for students
+</p>
+
+<div class="course-grid">
+
+<div class="course-card">
+
+<img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1200&auto=format&fit=crop">
+
+<div class="course-content">
+
+<div class="tag">
+Development
+</div>
+
+<h3>
+Web Development
+</h3>
+
+<p>
+Learn HTML, CSS and JavaScript to create beautiful websites.
+</p>
+
+<a href="#" class="btn primary-btn">
+Enroll Now
+</a>
+
+</div>
+
+</div>
+
+<div class="course-card">
+
+<img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop">
+
+<div class="course-content">
+
+<div class="tag">
+Networking
+</div>
+
+<h3>
+Computer Networking
+</h3>
+
+<p>
+Master networking concepts and Cisco Packet Tracer practically.
+</p>
+
+<a href="#" class="btn primary-btn">
+Enroll Now
+</a>
+
+</div>
+
+</div>
+
+<div class="course-card">
+
+<img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1200&auto=format&fit=crop">
+
+<div class="course-content">
+
+<div class="tag">
+Programming
+</div>
+
+<h3>
+Programming
+</h3>
+
+<p>
+Learn C, C++, Java and Python from beginner to advanced.
+</p>
+
+<a href="#" class="btn primary-btn">
+Enroll Now
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- FEATURES -->
+
+<section id="features">
+
+<h2 class="section-title">
+Why Choose Us
+</h2>
+
+<p class="section-subtitle">
+Modern responsive learning platform
+</p>
+
+<div class="features">
+
+<div class="feature-box">
+
+<div class="feature-icon">
+📱
+</div>
+
+<h3>
+Responsive Design
+</h3>
+
+<p>
+Perfect on mobile, tablet, laptop and PC.
+</p>
+
+</div>
+
+<div class="feature-box">
+
+<div class="feature-icon">
+⚡
+</div>
+
+<h3>
+Fast Learning
+</h3>
+
+<p>
+Easy and practical learning experience.
+</p>
+
+</div>
+
+<div class="feature-box">
+
+<div class="feature-icon">
+💻
+</div>
+
+<h3>
+Live Practice
+</h3>
+
+<p>
+Practice coding and networking with projects.
+</p>
+
+</div>
+
+<div class="feature-box">
+
+<div class="feature-icon">
+🎓
+</div>
+
+<h3>
+Professional Courses
+</h3>
+
+<p>
+Industry level courses for future careers.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+<div class="contact-box">
+
+<h2>
+Contact Sachi eLearning Hub
+</h2>
+
+<p>
+📧 Email: sachielearninghub@gmail.com
+</p>
+
+<p>
+📱 Phone: +91 9876543210
+</p>
+
+<p>
+📍 Maharashtra, India
+</p>
+
+<p>
+Join today and start your learning journey with modern education.
+</p>
+
+<a href="#" class="btn secondary-btn">
+Join Now
+</a>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+© 2026 Sachi eLearning Hub | All Rights Reserved
+
+</footer>
+
+<!-- JAVASCRIPT -->
+
+<script>
+
+const menuToggle = document.getElementById("menu-toggle");
+const navbar = document.getElementById("navbar");
+
+menuToggle.addEventListener("click", () => {
+navbar.classList.toggle("active");
+});
+
+</script>
+
+</body>
+</html>
